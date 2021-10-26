@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: iamajai/nginx_with_site:site-1
+        image: iamajai/nginx_with_site:site-2
         ports:
         - containerPort: 80
