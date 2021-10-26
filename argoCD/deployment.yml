@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-sample
+  name: httpd-sample
   labels:
-    app: nginx-app
+    app: httpd-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-app
+      app: httpd-app
   template:
     metadata:
       labels:
-        app: nginx-app
+        app: httpd-app
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: httpd
+        image: iamajai/nginx_with_site:site-1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
+  name: httpd-svc
 spec:
   type: LoadBalancer
   ports:
