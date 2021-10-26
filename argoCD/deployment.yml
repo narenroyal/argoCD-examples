@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpd-sample
+  name: nginx-deployment
   labels:
-    app: httpd-app
+    app: nginx
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: httpd-app
+      app: nginx
   template:
     metadata:
       labels:
-        app: httpd-app
+        app: nginx
     spec:
       containers:
-      - name: httpd
+      - name: nginx
         image: iamajai/nginx_with_site:site-1
-        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
 
