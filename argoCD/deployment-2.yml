@@ -12,10 +12,10 @@ spec:
   template:
     metadata:
       labels:
-        app: second
+        app: 
     spec:
       containers:
       - name: second-container
-        image:
+        image: httpd:latest
         ports:
         - containerPort: 80
