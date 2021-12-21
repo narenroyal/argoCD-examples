@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: second-container
-        image: httpd:latest
+        image:
         ports:
         - containerPort: 80
